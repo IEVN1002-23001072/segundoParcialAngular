@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <div>
+            <label for="nombre">Ingresa tu nombre</label>
+            <input type="text" [(ngModel)]="nombre" name="nombre">
+        </div>
+        <br>
+        <div>
+            <label for="apaterno">Ingresa tu Apellido paterno</label>
+            <input type="text" [(ngModel)]="apaterno" name="apaterno">
+        </div>
+        <br>
+        <div>
+            <label for="amaterno">Ingresa tu Apellido materno</label>
+            <input type="text" [(ngModel)]="amaterno" name="amaterno" >
+        </div>
+        <br>
+        <div>
+            <label for="dia">Ingresa tu dia de nacimiento</label>
+            <input type="number" [(ngModel)]="dia" name="dia">
+        </div>
+        <br>
+        <div>
+            <label for="mes">Ingresa tu mes de nacimiento</label>
+            <input type="number" [(ngModel)]="mes" name="mes">
+        </div>
+        <br>
+        <div>
+            <label for="ano">Ingresa tu año de nacimiento</label>
+            <input type="number" [(ngModel)]="ano" name="ano">
+        </div>
+        <br>
+        <div>
+            <label for="masculino">Masculino</label>
+            <input type="radio" name="genero"  [(ngModel)]="genero" value="masculino">
+            <label for="femenino">Femenino</label>
+            <input type="radio" name="genero"  [(ngModel)]="genero" value="femenino">
+        </div>
+        <button (click)="datos()">Imprimir</button>
+    </form>
+        <h1>La edad correcta {{anos}}</h1>
+        <h1>{{nombrecompleto}}</h1>
+        <h2>Tu edad es: {{edad}}</h2>
+        <h3>{{resultado}}</h3>
+        <img [src]="ruta" alt="" width="250">
+    
+</body>
+</html>
