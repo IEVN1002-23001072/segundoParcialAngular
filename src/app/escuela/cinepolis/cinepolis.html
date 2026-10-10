@@ -1,0 +1,116 @@
+<div class="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow">
+  <h1 class="text-3xl font-bold text-gray-900 mb-6">Cinepoolis</h1>
+  <h2 class="text-3xl font-bold text-gray-900 mb-6">El boleto cuesta 12</h2>
+  <p>Si compras mas de 5 boletos te damos 15% de descuento, si compras de 3 a 5 solo el 10% y si tienes tarjeta se te da un 10% extra</p>
+  <br>
+  <br>
+
+  <form [formGroup]="formulario">
+    <!-- Nombre -->
+    <div class="mb-5">
+      <label for="name" class="block mb-2 text-sm font-medium text-gray-900">
+        Nombre
+      </label>
+
+      <input
+        type="text"
+        id="name"
+        name="name"
+        formControlName="nombre"
+        required
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        placeholder="Ingresa tu nombre"
+      />
+    </div>
+    <!--compradores -->
+    <div class="mb-5">
+      <label
+        for="compradores"
+        class="block mb-2 text-sm font-medium text-gray-900"
+      >
+        Numero de compradores
+      </label>
+
+      <input
+        type="number"
+        id="compradores"
+        name="compradores"
+        formControlName="compradores"
+        required
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        placeholder="Ingresa los compradores"
+      />
+    </div>
+
+    <!-- tarjeta -->
+    <div class="mb-5">
+      <label for="materia" class="block mb-2 text-sm font-medium text-gray-900">
+        Tienes tarjeta?
+      </label>
+
+      <input
+        type="radio"
+        id="si"
+        name="tarjeta"
+        formControlName="tarjeta"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5"
+        placeholder="Si"
+        value="si"
+      />Si
+      <input
+        type="radio"
+        id="materia"
+        name="tarjeta"
+        formControlName="tarjeta"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5"
+        placeholder="No"
+        value="no"
+      />NO
+    </div>
+
+    <!-- boletos -->
+    <div class="mb-5">
+      <label for="boletos" class="block mb-2 text-sm font-medium text-gray-900">
+        boletos
+      </label>
+
+      <input
+        type="number"
+        id="boletos"
+        name="boletos"
+        formControlName="boletos"
+        required
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        placeholder="Numero de boletos a comprar"
+      />
+    </div>
+
+    <!-- Boton  -->
+    <div class="flex justify-end mt-5">
+      <button
+        (click)="muestraCompra()"
+        type="submit"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 disabled:opacity-50 disabled:cursor-not-allowed mx-2"
+      >
+        Procesar
+      </button>
+      <button
+        type="submit"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 disabled:opacity-50 disabled:cursor-not-allowed"
+      >
+        Salir
+      </button>
+    </div>
+    
+  </form>
+</div>
+<br>
+<br>
+<div class="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow">
+  <h1>Salida</h1>
+  <h2>boletos: {{nuevaCompra.boletos}}</h2>
+  <h2>nombre: {{nuevaCompra.nombre}}</h2>
+  <h2>tarjeta: {{nuevaCompra.tarjeta}}</h2>
+  <h2>numero de compradores: {{nuevaCompra.compradores}}</h2>
+  <h2>total: {{nuevaCompra.total}}</h2>
+</div>
